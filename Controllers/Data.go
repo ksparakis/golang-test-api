@@ -4,7 +4,9 @@ import (
 	"genity/Models"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	uuid "github.com/satori/go.uuid"
 	"net/http"
+	"time"
 )
 //GetUsers ... Get all users
 func GetDataByTitle(c *gin.Context) {
@@ -20,8 +22,11 @@ func GetDataByTitle(c *gin.Context) {
 
 //CreateUser ... Create User
 func CreateData(c *gin.Context) {
+	title := c.Params.ByName("title")
 	var data Models.Data
-	data.BeforeCreate(c)
+	data.Title = title
+	data.Timestamp = time.Now()
+	data.UUID4 = uuid.NewV4()
 	err := c.BindJSON(&data)
 	if err != nil{
 		fmt.Println(err)

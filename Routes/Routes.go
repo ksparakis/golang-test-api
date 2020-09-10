@@ -9,12 +9,9 @@ import (
 func SetupRouter() *gin.Engine {
 	router := gin.Default()
 
-	v1 := router.Group("")
-	{
-		v1.POST("/post-data/:data", Controllers.CreateData)
-		v1.GET("/get-data/:title", Controllers.GetDataByTitle)
 
-	}
+	router.POST("/post-data/:title", Controllers.CreateData)
+	router.GET("/get-data/:title", Controllers.GetDataByTitle)
 
 	return router
 }
