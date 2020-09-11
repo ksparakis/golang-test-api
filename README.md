@@ -8,6 +8,10 @@ To Deploy:
 docker-compose build
 docker-compose up
 
+To run GO locally 
+go mod download
+
+
 API Routes
 POST
 /post-data/{name of the data}
