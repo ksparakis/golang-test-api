@@ -24,7 +24,9 @@ func main() {
 
 	r := Routes.SetupRouter()
 	//running
-	r.Run()
+	err = r.Run()
 
-
+	if err != nil {
+		fmt.Println("Status:", err)
+	}
 }
