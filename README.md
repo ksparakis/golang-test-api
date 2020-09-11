@@ -2,12 +2,12 @@
 I built this api using Gin a golang api framework and MYSQL as a database.
 
 ## To Deploy:
-- pull this github repo down locally
-- In a terminal, go to the directory where this project is located locally and run:
 
-  docker-compose build
-  docker-compose up
+ 1. pull this github repo down locally
+ 2. In a terminal, go to the directory where this project is located locally and run:
 
+>       docker-compose build
+>       docker-compose up
 
 ## API Routes
 #### POST
@@ -15,3 +15,4 @@ I built this api using Gin a golang api framework and MYSQL as a database.
 
 #### GET
 /get-data/{name of the data}
+
